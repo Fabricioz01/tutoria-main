@@ -1,0 +1,16 @@
+{
+  "name": "mi-proyecto-node",
+  "version": "1.0.0",
+  "description": "Proyecto Node.js para acceder a funciones de base de datos desde interfaces web",
+  "main": "src/server.js",
+  "type":"module",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^2.3.0",
+    "path": "^0.12.7",
+    "pg": "^8.7.1"
+  }
+}

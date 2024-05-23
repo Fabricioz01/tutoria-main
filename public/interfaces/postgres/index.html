@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles PostgreSQL</title>
+    <link rel="stylesheet" type="text/css" href="index.css">  
+</head>
+<body>
+    <header class="cabecera">
+        <div class="hijo"> <img src="../../imagenes/postgresSQL.png" alt="postgres"></div>
+        <button id="roles-button">Roles</button>
+        <button id="usuarios-button">Usuarios</button>
+        <button id="respaldo-button">Respaldo</button>
+    </header>
+
+   <!-- Contenido de Roles -->
+   <div id="roles-content" class="modal-content" style="display: none;">
+    <span class="close-button">&times;</span>
+    <h2>Administrar Roles</h2>
+    <form id="create-role-form">
+        <label for="role-name">Nombre del Rol:</label>
+        <input type="text" id="role-name" name="role-name" required><br><br>
+        <label>Permisos:</label><br>
+        <input type="checkbox" id="select-permission" name="permissions" value="INSERT">
+        <label for="select-permission">INSERT</label><br>
+        <input type="checkbox" id="insert-permission" name="permissions" value="SELECT">
+        <label for="insert-permission">SELECT</label><br>
+        <input type="checkbox" id="update-permission" name="permissions" value="UPDATE">
+        <label for="update-permission">UPDATE</label><br>
+        <input type="checkbox" id="delete-permission" name="permissions" value="DELETE">
+        <label for="delete-permission">DELETE</label><br><br>
+        <button type="submit" class="botonbton">Crear Rol</button>
+    </form>
+    <ul id="roles-list"></ul> <!-- Lista para mostrar los roles -->
+</div>
+
+<!-- Contenido de Usuarios -->
+<div id="usuarios-content" class="modal-content" style="display: none;">
+    <span class="close-button">&times;</span>
+    <h2>Administrar Usuarios</h2>
+    <form id="create-user-form">
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="role">Rol:</label>
+        <select id="role" name="role"> 
+             <!-- Roles obtenidos dinamicamente-->          
+        </select><br><br>
+        <button type="submit" class="bot">Crear Usuario</button>
+    </form>
+    <ul id="users-list"></ul>
+</div>
+
+<!-- Contenido de Respaldo -->
+<div id="respaldo-content" class="modal-content" style="display: none;">
+    <span class="close-button">&times;</span>
+    <h2>Respaldo de Base de Datos</h2>
+    <button id="backup-button" class="botonbton">Realizar Respaldo</button>
+    <a href="http://localhost:3000/postgres/mostrarespaldo" target="_blank">Lista de respaldos.</a>
+    <!-- Aquí puedes añadir más opciones o información sobre el respaldo -->
+</div>
+    <ul id="table-names-list" class="table-names-list"></ul>
+
+    <!-- Modal emergente para cada li -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Datos de la Tabla</h2>
+            <div class="table-row"></div>
+            <div id="table-data"></div>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="solicitudes.js"></script>
+    <script src="script.js"></script>
+    <script src="dom.js"></script>
+</body>
+</html>
