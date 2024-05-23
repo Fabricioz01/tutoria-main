@@ -1,0 +1,29 @@
+*{
+    font-family: 'Lobster', cursive;
+    font-weight: 100;
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container-flex{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+.hijo{
+    width: 250px;
+    height: 200px;
+    background: rgb(183, 243, 193);
+    margin:20px;
+    border: 2px solid rgb(43, 218, 57);
+    border-radius: 5%;
+
+}
+.hijo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }

@@ -1,0 +1,248 @@
+
+*{
+    font-family: 'Lobster', cursive;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.cabecera{
+display: flex;
+position: relative;
+width: 100%;
+background-color: #007BFF;
+justify-content: end;
+}
+
+.cabecera button{
+margin: 27px;
+box-sizing: border-box; /* El tamaño total incluirá el relleno y el borde */
+font-size: 0.9em;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent; /* Borde transparente */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave */
+}
+
+.cabecera button:hover{
+    background-color: #ffffff;
+    border-color:rgb(0, 0, 0);
+}
+
+.hijo {
+    width: 150px;
+    position: absolute;
+    left: 0;
+    margin: 4px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5%;
+}
+.hijo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+.table-names-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 300px;
+    width: 100%;
+    margin: auto;
+}
+
+.table-name-item {
+    background: #007BFF;
+    color: #ffffff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.table-name-item:hover {
+    background: #0056b3;
+}
+
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Asegúrate de que esté delante de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permitir scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro con opacidad */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% desde arriba y centrado */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Ancho del modal */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s; /* Animación de entrada */
+}
+
+#roles-content, #usuarios-content,#respaldo-content{
+    margin: 5% auto;
+    position: relative;
+}
+
+#create-role-form{
+display: inline-block;
+}
+#roles-list{
+    list-style-type: none;
+    margin-left:10%;
+    background-color: #ddd;
+    border-radius: 5%;
+    display: inline-block;
+    width: 50%;
+    }
+#roles-list li:hover {
+background-color: #007BFF;
+}
+
+.opcion{
+background-color: #007BFF;
+color: #ffffff;
+}
+#create-user-form{
+    display: inline-block;
+}
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+#users-list{
+    list-style-type: none;
+    display: inline-block;
+    position: absolute;
+    margin-left: 250px;
+    border-radius: 5%;
+    border: black solid 2px;
+}
+#users-list li:nth-child(1){
+    background-color: #0056b3;
+    color: #ffffff;
+    border-radius: 5%;
+    margin: 0;
+}
+
+#users-list li {
+margin: 5px;
+}
+#users-list li:nth-child(1):hover{
+    background-color: #0056b3;
+    color: #ffffff;
+    
+}
+#users-list li:hover{
+    background-color:#007BFF;
+    color: #ffffff;
+}
+
+.botonbton{
+    box-sizing: border-box;
+    font-size: 0.9em;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ddd;
+    border: 2px solid rgb(0, 0, 0);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.botonbton:hover{
+    background-color: #ffffff;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#table-data {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.table-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.table-row > div:first-child input {
+    width: 50%; /* Ajusta este valor según tus necesidades */
+}
+
+.header-row {
+    font-weight: bold;
+    border-bottom: 2px solid #007BFF;
+}
+
+.table-row input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.table-header {
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.buttons button {
+    padding: 5px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.crear-button{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.crear-button button {
+    padding: 5px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #ddd;
+}
+.crear-button button:hover {
+background-color: #0056b3;
+}
